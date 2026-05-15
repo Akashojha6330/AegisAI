@@ -60,7 +60,19 @@ export const aiSystemsApi = {
   list: async () => {
     const { data } = await api.get('/ai-systems/')
     return data
+// RAG API
+export const ragApi = {
+  query: async (question: string) => {
+    const { data } = await api.post('/rag/query', { question })
+    return data
   },
+}// RAG API
+export const ragApi = {
+  query: async (question: string) => {
+    const { data } = await api.post('/rag/query', { question })
+    return data
+  },
+}  },
   get: async (id: number) => {
     const { data } = await api.get(`/ai-systems/${id}`)
     return data
@@ -104,7 +116,7 @@ export const documentsApi = {
   get: async (id: number) => {
     const { data } = await api.get(`/documents/${id}`)
     return data
-  },
+nano frontend/src/services/api.ts  },
   generate: async (request: {
     document_type: string
     ai_system_id: number
@@ -114,6 +126,13 @@ export const documentsApi = {
   },
   delete: async (id: number) => {
     await api.delete(`/documents/${id}`)
+  },
+}
+// RAG API
+export const ragApi = {
+  query: async (question: string) => {
+    const { data } = await api.post('/rag/query', { question })
+    return data
   },
 }
 
